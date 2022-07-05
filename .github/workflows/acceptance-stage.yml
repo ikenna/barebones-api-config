@@ -20,7 +20,7 @@ jobs:
         run: echo "run deck konnect sync  to deploy changes"
       - name: "Run acceptance tests"
         run: echo "run acceptance tests"
-      - name: "Publish API ref to staging portal"
+      - name: "Publish API ref to staging portal."
         run: echo "Publish API ref to staging portal"
 
 
