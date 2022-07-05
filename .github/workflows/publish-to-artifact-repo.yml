@@ -21,7 +21,7 @@ jobs:
     steps:
       - name: "Check out master"
         uses: actions/checkout@v3
-      - name: "Zip API definition, test and config"
+      - name: "Zip API configs"
         run: |
             zip artifacts.zip api-config.yaml
       - name: "Setup artifact repository CLI (Jfrog CLI)" 
