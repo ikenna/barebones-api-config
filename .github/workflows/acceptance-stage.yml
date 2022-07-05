@@ -1,0 +1,29 @@
+name: API Acceptance Stage Checks
+
+on: 
+  - pull_request
+
+env:
+  run_number: ${GITHUB_RUN_NUMBER}
+
+permissions:
+  checks: write
+
+jobs:
+  acceptance-stage-checks:
+    name: Acceptance Stage Checks
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Ensure no changes applied outside of this repo"
+        run: echo "run deck konnect diff --non-zero-exit-code'"
+      - name: "Apply/sync changes to the API gateway in staging"
+        run: echo "run deck konnect sync  to deploy changes"
+      - name: "Run acceptance tests"
+        run: echo "run acceptance tests"
+      - name: "Publish API ref to staging portal"
+        run: echo "Publish API ref to staging portal"
+
+
+
+
+

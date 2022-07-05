@@ -1,0 +1,39 @@
+_format_version: "1.1"
+services:
+  - name: MinimalAPI
+    protocol: http
+    host: localhost
+    port: 3000
+    path: /
+    plugins: []
+    routes:
+      - tags:
+          - OAS3_import
+          - OAS3file_api.oas.yaml
+        name: MinimalAPI-get-users-userId
+        methods:
+          - GET
+        paths:
+          - /users/(?<userId>[^\/]+)$
+        strip_path: false
+      - tags:
+          - OAS3_import
+          - OAS3file_api.oas.yaml
+        name: MinimalAPI-patch-users-userId
+        methods:
+          - PATCH
+        paths:
+          - /users/(?<userId>[^\/]+)$
+        strip_path: false
+      - tags:
+          - OAS3_import
+          - OAS3file_api.oas.yaml
+        name: MinimalAPI-post-user
+        methods:
+          - POST
+        paths:
+          - /user$
+        strip_path: false
+    tags:
+      - OAS3_import
+      - OAS3file_api.oas.yaml
